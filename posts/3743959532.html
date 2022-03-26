@@ -7,6 +7,7 @@
     <meta name="keywords" content="Java笔录, Ponzio">
     <meta name="description" content="Java基础">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="pragma" content="no-cache">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
     <meta name="mobile-web-app-capable" content="yes">
@@ -32,7 +33,6 @@
 
 <meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Ponzio" type="application/atom+xml">
 </head>
-
 
 
 
@@ -584,21 +584,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-03-23
+                    2022-03-26
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    127.7k
+                    131.9k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    530 分
+                    547 分
                 </div>
                 
 
@@ -15523,7 +15523,7 @@ c <span class="token operator">=</span> <span class="token keyword">new</span> <
   <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ol>
-<h2 id="十二-：Java反射机制"><a href="#十二-：Java反射机制" class="headerlink" title="十二)：Java反射机制"></a>十二)：Java反射机制</h2><h3 id="1-：反射机制基本概念"><a href="#1-：反射机制基本概念" class="headerlink" title="1)：反射机制基本概念"></a>1)：反射机制基本概念</h3><ul>
+<h2 id="十二：Java反射机制"><a href="#十二：Java反射机制" class="headerlink" title="十二：Java反射机制"></a>十二：Java反射机制</h2><h3 id="1-：反射机制基本概念"><a href="#1-：反射机制基本概念" class="headerlink" title="1)：反射机制基本概念"></a>1)：反射机制基本概念</h3><ul>
 <li><p>该概念包含两个方面，编译器和运行期</p>
 <ul>
 <li><p><font style="color:green">编译器</font>是指把源码交给编译器编译成计算机可以执行的文件的过程。在 Java 中也就是把 Java 代码编成 class 文件的过程。编译期只是做了一些翻译功能，并没有把代码放在内存中运行起来，而只是把代码当成文本进行操作，比如检查错误</p>
@@ -16585,6 +16585,494 @@ objectClass<span class="token punctuation">.</span><span class="token function">
 </blockquote>
 </li>
 </ul>
+<h2 id="十三、输入-输出流"><a href="#十三、输入-输出流" class="headerlink" title="十三、输入/输出流"></a>十三、输入/输出流</h2><h3 id="1-：流的概念"><a href="#1-：流的概念" class="headerlink" title="1)：流的概念"></a>1)：流的概念</h3><ul>
+<li><code>根据数据流向的不同，可以分为输入(Input)流和输出(Output)流两种</code></li>
+</ul>
+<h4 id="1：什么是输入-输出流"><a href="#1：什么是输入-输出流" class="headerlink" title="1：什么是输入/输出流"></a>1：什么是输入/输出流</h4><ul>
+<li><p>定义：输入就是将数据从各种输入设备（包括文件、键盘等）中读取到内存中，输出则正好相反，是将数据写入到各种输出设备（比如文件、显示器、磁盘等）。例如键盘就是一个标准的输入设备，而显示器就是一个标准的输出设备，但是文件既可以作为输入设备，又可以作为输出设备</p>
+</li>
+<li><p>数据流是Java进行I/O操作的对象，它按照不同的标准分为不同的类别：</p>
+<ul>
+<li><p>按照流的方向主要分为输入流和输出流两大类</p>
+</li>
+<li><p>数据流按照数据单位的不同分为字节流和字符流</p>
+</li>
+<li><p>按照功能可以划分为节点流和处理流</p>
+<p><img src="https://g808-1307802639.cos.ap-chengdu.myqcloud.com/Java/image-20220323143603564.png"></p>
+<p><img src="https://g808-1307802639.cos.ap-chengdu.myqcloud.com/Java/image-20220323143621971.png"></p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="2：输入流"><a href="#2：输入流" class="headerlink" title="2：输入流"></a>2：输入流</h4><ul>
+<li><p>Java 流相关的类都封装在 java.io 包中，而且每个数据流都是一个对象。所有输入流类都是 InputStream 抽象类（字节输入流）和 Reader 抽象类（字符输入流）的子类。其中 InputStream 类是字节输入流的抽象类，是所有字节输入流的父类</p>
+<p><img src="https://g808-1307802639.cos.ap-chengdu.myqcloud.com/Java/image-20220323143834253.png"></p>
+</li>
+<li><p>InputStream 类中所有方法遇到错误时都会引发 IOException 异常。</p>
+<center>InputStream类常用方法</center>
+
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>int read()</td>
+<td>从输入流读入一个 8 字节的数据，将它转换成一个 0~ 255 的整数，返回一个整数，如果遇到输入流的结尾返回 -1</td>
+</tr>
+<tr>
+<td>int read(byte[] b)</td>
+<td>从输入流读取若干字节的数据保存到参数 b 指定的字节数组中，返回的字节数表示读取的字节数，如果遇到输入流的结尾返回 -1</td>
+</tr>
+<tr>
+<td>int read(byte[] b,int off,int len)</td>
+<td>从输入流读取若干字节的数据保存到参数 b 指定的字节数组中，其中 off 是指在数组中开始保存数据位置的起始下标，len 是指读取字节的位数。返回的是实际读取的字节数，如果遇到输入流的结尾则返回 -1</td>
+</tr>
+<tr>
+<td>void close()</td>
+<td>关闭数据流，当完成对数据流的操作之后需要关闭数据流</td>
+</tr>
+<tr>
+<td>int available()</td>
+<td>返回可以从数据源读取的数据流的位数。</td>
+</tr>
+<tr>
+<td>skip(long n)</td>
+<td>从输入流跳过参数 n 指定的字节数目</td>
+</tr>
+<tr>
+<td>boolean markSupported()</td>
+<td>判断输入流是否可以重复读取，如果可以就返回 true</td>
+</tr>
+<tr>
+<td>void mark(int readLimit)</td>
+<td>如果输入流可以被重复读取，从流的当前位置开始设置标记，readLimit 指定可以设置标记的字节数</td>
+</tr>
+<tr>
+<td>void reset()</td>
+<td>使输入流重新定位到刚才被标记的位置，这样可以重新读取标记过的数据</td>
+</tr>
+</tbody></table>
+<ul>
+<li>最后 3 个方法一般会结合在一起使用，首先使用 markSupported() 判断，如果可以重复读取，则使用 mark(int readLimit) 方法进行标记，标记完成之后可以使用 read() 方法读取标记范围内的字节数，最后使用 reset() 方法使输入流重新定位到标记的位置，继而完成重复读取操作</li>
+</ul>
+</li>
+</ul>
+<h4 id="3：输出流"><a href="#3：输出流" class="headerlink" title="3：输出流"></a>3：输出流</h4><ul>
+<li><p>所有输出流类都是 OutputStream 抽象类（字节输出流）和 Writer 抽象类（字符输出流）的子类</p>
+<p><img src="https://g808-1307802639.cos.ap-chengdu.myqcloud.com/Java/image-20220323145123102.png"></p>
+</li>
+<li><p>OutputStream 类是所有字节输出流的超类，用于以二进制的形式将数据写入目标设备，该类是抽象类，不能被实例化</p>
+<center>OutputStream类常用方法</center>
+
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>int write(b)</td>
+<td>将指定字节的数据写入到输出流</td>
+</tr>
+<tr>
+<td>int write (byte[] b)</td>
+<td>将指定字节数组的内容写入输出流</td>
+</tr>
+<tr>
+<td>int write (byte[] b,int off,int len)</td>
+<td>将指定字节数组从 off 位置开始的 len 字节的内容写入输出流</td>
+</tr>
+<tr>
+<td>close()</td>
+<td>关闭数据流，当完成对数据流的操作之后需要关闭数据流</td>
+</tr>
+<tr>
+<td>flush()</td>
+<td>刷新输出流，强行将缓冲区的内容写入输出流</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<h3 id="2-：系统流"><a href="#2-：系统流" class="headerlink" title="2)：系统流"></a>2)：系统流</h3><ul>
+<li>每个 Java 程序运行时都带有一个系统流，系统流对应的类为 java.lang.System。Sytem 类封装了 Java 程序运行时的 3 个系统流，分别通过 in、out 和 err 变量来引用。这 3 个系统流如下所示：<ul>
+<li>System.in：标准输入流，默认设备是键盘。</li>
+<li>System.out：标准输出流，默认设备是控制台。</li>
+<li>System.err：标准错误流，默认设备是控制台。</li>
+</ul>
+</li>
+</ul>
+<ol>
+<li><p>例 (使用 System.in 读取字节数组)</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SystemTest</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">// 声明一个字节数组</span>
+    <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> byteData <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token number">100</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"请输入英文:"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">try</span> <span class="token punctuation">&#123;</span>
+      <span class="token class-name">System</span><span class="token punctuation">.</span>in<span class="token punctuation">.</span><span class="token function">read</span><span class="token punctuation">(</span>byteData<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">IOException</span> e<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"您输入的内容如下："</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">byte</span> byteDatum <span class="token operator">:</span> byteData<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token keyword">char</span><span class="token punctuation">)</span> byteDatum<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li><code>System.in是InputStream类的一个对象</code>因此上述代码的 System.in.read() 方法实际是访问 InputStream 类定义的 read() 方法。该方法可以从键盘读取一个或多个字符。<code>对于 System.out 输出流主要用于将指定内容输出到控制台</code></li>
+<li><code>System.out 和 System.error 是 PrintStream 类的对象</code>。因为 PrintStream 是一个从 OutputStream 派生的输出流，所以它还执行低级别的 write() 方法。因此，除了 print() 和 println() 方法可以完成控制台输出以外，System.out 还可以调用 write() 方法实现控制台输出</li>
+</ul>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">void</span> <span class="token function">write</span><span class="token punctuation">(</span><span class="token keyword">int</span> byteval<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">IOException</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<ul>
+<li>该方法通过 byteval 参数向文件写入指定的字节。在实际操作中，print() 方法和 println() 方法比 write() 方法更常用</li>
+</ul>
+<blockquote>
+<p>尽管它们通常用于对控制台进行读取和写入字符，但是这些都是字节流。因为预定义流是没有引入字符流的 Java 原始规范的一部分，所以它们不是字符流而是字节流，但是在 Java 中可以将它们打包到基于字符的流中使用</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="3-：字符编码介绍"><a href="#3-：字符编码介绍" class="headerlink" title="3)：字符编码介绍"></a>3)：字符编码介绍</h3><ul>
+<li><p>常见编码以：IOS8859-1、GBK/GB2312、Unicode、UTF编码</p>
+</li>
+<li><p>Java 中常见编码说明如下：</p>
+<ul>
+<li>ISO8859-1：属于单字节编码，最多只能表示 0~255 的字符范围。</li>
+<li>GBK/GB2312：中文的国标编码，用来表示汉字，属于双字节编码。GBK 可以表示简体中文和繁体中文，而 GB2312 只能表示简体中文。GBK 兼容 GB2312。</li>
+<li>Unicode：是一种编码规范，是为解决全球字符通用编码而设计的。UTF-8 和 UTF-16 是这种规范的一种实现，此编码不兼容 ISO8859-1 编码。Java 内部采用此编码。</li>
+<li>UTF：UTF 编码兼容了 ISO8859-1 编码，同时也可以用来表示所有的语言字符，不过 UTF 编码是不定长编码，每一个字符的长度为 1~6 个字节不等。一般在中文网页中使用此编码，可以节省空间。</li>
+</ul>
+</li>
+<li><p>查看本地默认编码使用System类查看</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">Properties</span> <span class="token function">getProperty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+  <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"系统默认编码："</span><span class="token operator">+</span><span class="token class-name">System</span><span class="token punctuation">.</span><span class="token function">getProperty</span><span class="token punctuation">(</span><span class="token string">"file.encoding"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
+<li><p>编码转换使用String类中的getBytes(String charset)</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token function">getBytes</span><span class="token punctuation">(</span><span class="token class-name">String</span> charset<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">CodeTest</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">Exception</span> <span class="token punctuation">&#123;</span>
+    <span class="token class-name">File</span> f <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">File</span><span class="token punctuation">(</span><span class="token string">"D:"</span> <span class="token operator">+</span> <span class="token class-name">File</span><span class="token punctuation">.</span>separator <span class="token operator">+</span> <span class="token string">"test.txt"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// 实例化输出流</span>
+    <span class="token class-name">OutputStream</span> out <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileOutputStream</span><span class="token punctuation">(</span>f<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// 指定ISO8859-1编码</span>
+    <span class="token keyword">byte</span> b<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"C语言中文网，你好！"</span><span class="token punctuation">.</span><span class="token function">getBytes</span><span class="token punctuation">(</span><span class="token string">"ISO8859-1"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// 保存转码之后的数据</span>
+    out<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// 关闭输出流</span>
+    out<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+<h3 id="4-：File类"><a href="#4-：File类" class="headerlink" title="4)：File类"></a>4)：File类</h3><ul>
+<li><p>定义：File类是java.io包中唯一代表磁盘文件本身的对象，File类定义一些方法来操作文件，新建、删除等</p>
+</li>
+<li><p>File类不能访问文件内容本身，如果需要访问文件内容本身，则需要使用输入/输出流</p>
+</li>
+<li><p>File类提供了如下三种形式构造方法：</p>
+<ol>
+<li>File(String path)：如果path是实际存在的路径，则该File对象表示的是目录；如果path是文件名，则该File对象表示的是文件</li>
+<li>File(String path，String name)：paht是路径名，name是文件名</li>
+<li>File(File dir，String name)：dir是路径对象，name是文件名</li>
+</ol>
+<center>File类的常用方法</center>
+
+<table>
+<thead>
+<tr>
+<th>方法名称</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>boolean canRead()</td>
+<td>测试应用程序是否能从指定的文件中进行读取</td>
+</tr>
+<tr>
+<td>boolean canWrite()</td>
+<td>测试应用程序是否能写当前文件</td>
+</tr>
+<tr>
+<td>boolean delete()</td>
+<td>删除当前对象指定的文件</td>
+</tr>
+<tr>
+<td>boolean exists()</td>
+<td>测试当前 File 是否存在</td>
+</tr>
+<tr>
+<td>String getAbsolutePath()</td>
+<td>返回由该对象表示的文件的绝对路径名</td>
+</tr>
+<tr>
+<td>String getName()</td>
+<td>返回表示当前对象的文件名或路径名（如果是路径，则返回最后一级子路径名）</td>
+</tr>
+<tr>
+<td>String getParent()</td>
+<td>返回当前 File 对象所对应目录（最后一级子目录）的父目录名</td>
+</tr>
+<tr>
+<td>boolean isAbsolute()</td>
+<td>测试当前 File 对象表示的文件是否为一个绝对路径名。该方法消除了不同平台的差异，可以直接判断 file 对象是否为绝对路径。在 UNIX/Linux/BSD 等系统上，如果路径名开头是一条斜线<code>/</code>，则表明该 File 对象对应一个绝对路径；在 Windows 等系统上，如果路径开头是盘符，则说明它是一个绝对路径。</td>
+</tr>
+<tr>
+<td>boolean isDirectory()</td>
+<td>测试当前 File 对象表示的文件是否为一个路径</td>
+</tr>
+<tr>
+<td>boolean isFile()</td>
+<td>测试当前 File 对象表示的文件是否为一个“普通”文件</td>
+</tr>
+<tr>
+<td>long lastModified()</td>
+<td>返回当前 File 对象表示的文件最后修改的时间</td>
+</tr>
+<tr>
+<td>long length()</td>
+<td>返回当前 File 对象表示的文件长度</td>
+</tr>
+<tr>
+<td>String[] list()</td>
+<td>返回当前 File 对象指定的路径文件列表</td>
+</tr>
+<tr>
+<td>String[] list(FilenameFilter)</td>
+<td>返回当前 File 对象指定的目录中满足指定过滤器的文件列表</td>
+</tr>
+<tr>
+<td>boolean mkdir()</td>
+<td>创建一个目录，它的路径名由当前 File 对象指定</td>
+</tr>
+<tr>
+<td>boolean mkdirs()</td>
+<td>创建一个目录，它的路径名由当前 File 对象指定</td>
+</tr>
+<tr>
+<td>boolean renameTo(File)</td>
+<td>将当前 File 对象指定的文件更名为给定参数 File 指定的路径名</td>
+</tr>
+</tbody></table>
+<p>File 类中有以下两个常用常量：</p>
+<ul>
+<li>public static final String pathSeparator：指的是分隔连续多个路径字符串的分隔符，Windows 下指<code>;</code>。例如 <code>java -cp test.jar;abc.jar HelloWorld</code>。</li>
+<li>public static final String separator：用来分隔同一个路径字符串中的目录的，Windows 下指<code>/</code>。例如 <code>C:/Program Files/Common Files</code>。</li>
+</ul>
+<blockquote>
+<p>Windows 的路径分隔符使用反斜线“\”，而 Java 程序中的反斜线表示转义字符，所以如果需要在 Windows 的路径下包括反斜线，则应该使用两条反斜线或直接使用斜线“/”也可以。Java 程序支持将斜线当成平台无关的路径分隔符。</p>
+</blockquote>
+</li>
+</ul>
+<h4 id="1：获取文件属性"><a href="#1：获取文件属性" class="headerlink" title="1：获取文件属性"></a>1：获取文件属性</h4><ul>
+<li><p>已知File类对象指向一个已存在的文件</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">FileTest</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token class-name">String</span> path <span class="token operator">=</span> <span class="token string">"D:\\resources\\Java\\LearnJava\\src\\com\\Reflection"</span><span class="token punctuation">;</span>
+    <span class="token class-name">File</span> f <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">File</span><span class="token punctuation">(</span>path<span class="token punctuation">,</span> <span class="token string">"测试.exe"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"D:\\resources\\Java\\LearnJava\\src\\com\\Reflection\\测试.exe文件信息如下："</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"============================================"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"文件长度："</span> <span class="token operator">+</span> f<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"字节"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"文件或者目录："</span> <span class="token operator">+</span> <span class="token punctuation">(</span>f<span class="token punctuation">.</span><span class="token function">isFile</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">?</span> <span class="token string">"是文件"</span> <span class="token operator">:</span> <span class="token string">"不是文件"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"文件或者目录："</span> <span class="token operator">+</span> <span class="token punctuation">(</span>f<span class="token punctuation">.</span><span class="token function">isDirectory</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">?</span> <span class="token string">"是目录"</span> <span class="token operator">:</span> <span class="token string">"不是目录"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"是否可读："</span> <span class="token operator">+</span> <span class="token punctuation">(</span>f<span class="token punctuation">.</span><span class="token function">canRead</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">?</span> <span class="token string">"可读取"</span> <span class="token operator">:</span> <span class="token string">"不可读取"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"是否可写："</span> <span class="token operator">+</span> <span class="token punctuation">(</span>f<span class="token punctuation">.</span><span class="token function">canWrite</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">?</span> <span class="token string">"可写入"</span> <span class="token operator">:</span> <span class="token string">"不可写入"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"是否隐藏："</span> <span class="token operator">+</span> <span class="token punctuation">(</span>f<span class="token punctuation">.</span><span class="token function">isHidden</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">?</span> <span class="token string">"是隐藏文件"</span> <span class="token operator">:</span> <span class="token string">"不是隐藏文件"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"最后修改日期："</span> <span class="token operator">+</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span>f<span class="token punctuation">.</span><span class="token function">lastModified</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"文件名称："</span> <span class="token operator">+</span> f<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"文件路径："</span> <span class="token operator">+</span> f<span class="token punctuation">.</span><span class="token function">getPath</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"绝对路径："</span> <span class="token operator">+</span> f<span class="token punctuation">.</span><span class="token function">getAbsolutePath</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+<h4 id="2：创建和删除文件"><a href="#2：创建和删除文件" class="headerlink" title="2：创建和删除文件"></a>2：创建和删除文件</h4><ul>
+<li><p>File 类不仅可以获取已知文件的属性信息，还可以在指定路径创建文件，以及删除一个文件。创建文件需要调用 createNewFile() 方法，删除文件需要调用 delete() 方法。无论是创建还是删除文件通常都先调用 exists() 方法判断文件是否存在</p>
+</li>
+<li><p>假设存在某个文件，如果不存在则创建，否则就删除再创建</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">CreateFileTest</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">Exception</span> <span class="token punctuation">&#123;</span>
+    <span class="token class-name">File</span> f <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">File</span><span class="token punctuation">(</span><span class="token string">"D:\\resources\\Java\\LearnJava\\src\\com\\Reflection\\1.txt"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>f<span class="token punctuation">.</span><span class="token function">exists</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      f<span class="token punctuation">.</span><span class="token function">delete</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    f<span class="token punctuation">.</span><span class="token function">createNewFile</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>运行程序之后可以发现，在某盘中已经创建好了 1.txt 文件。但是如果在不同的操作系统中，路径的分隔符是不一样的，例如：</p>
+<ul>
+<li>Windows 中使用反斜杠<code>\</code>表示目录的分隔符。</li>
+<li>Linux 中使用正斜杠<code>/</code>表示目录的分隔符。</li>
+</ul>
+</li>
+<li><p>根据程序所在的操作系统自动使用符合本地操作系统要求的分隔符</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">CreateFileTest1</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">Exception</span> <span class="token punctuation">&#123;</span>
+    <span class="token class-name">String</span> path <span class="token operator">=</span> <span class="token string">"D:"</span> <span class="token operator">+</span> <span class="token class-name">File</span><span class="token punctuation">.</span>separator <span class="token operator">+</span> <span class="token string">"1.txt"</span><span class="token punctuation">;</span>
+    <span class="token class-name">File</span> f <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">File</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>f<span class="token punctuation">.</span><span class="token function">exists</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      f<span class="token punctuation">.</span><span class="token function">delete</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    f<span class="token punctuation">.</span><span class="token function">createNewFile</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>在操作文件时一定要使用 File.separator 表示分隔符</p>
+</blockquote>
+</li>
+</ul>
+<h4 id="3：创建和删除目录"><a href="#3：创建和删除目录" class="headerlink" title="3：创建和删除目录"></a>3：创建和删除目录</h4><ul>
+<li><p>创建目录需要调用 mkdir() 方法，删除目录需要调用 delete() 方法。无论是创建还是删除目录都可以调用 exists() 方法判断目录是否存在</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MkdirTest</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token class-name">String</span> path <span class="token operator">=</span> <span class="token string">"D:\\config\\"</span><span class="token punctuation">;</span>
+    <span class="token class-name">File</span> f <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">File</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>f<span class="token punctuation">.</span><span class="token function">exists</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      f<span class="token punctuation">.</span><span class="token function">delete</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    f<span class="token punctuation">.</span><span class="token function">mkdir</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+<h4 id="4：遍历目录"><a href="#4：遍历目录" class="headerlink" title="4：遍历目录"></a>4：遍历目录</h4><ul>
+<li>File类的list()方法提供了遍历目录功能，包含两种重载形式：</li>
+</ul>
+<h5 id="💨：String-list"><a href="#💨：String-list" class="headerlink" title="💨：String[] list()"></a>💨：String[] list()</h5><ul>
+<li><p>定义：该方法表示返回由 File 对象表示目录中所有文件和子目录名称组成的字符串数组，如果调用的 File 对象不是目录，则返回 null</p>
+<blockquote>
+<p>list() 方法返回的数组中仅包含文件名称，而不包含路径</p>
+</blockquote>
+</li>
+</ul>
+<h5 id="💨：String-list-FilenameFilter-filter"><a href="#💨：String-list-FilenameFilter-filter" class="headerlink" title="💨：String[] list(FilenameFilter filter)"></a>💨：String[] list(FilenameFilter filter)</h5><ul>
+<li>定义：该方法的作用与 list() 方法相同，不同的是返回数组中仅包含符合 filter 过滤器的文件和目录，如果 filter 为 null，则接受所有名称</li>
+</ul>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Traversal</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">// 建立File变量，并设定由f变量变数引用</span>
+    <span class="token class-name">File</span> f <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">File</span><span class="token punctuation">(</span><span class="token string">"D:\\"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"文件名称\t\t文件类型\t\t文件大小"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"==================================================="</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// 调用不带参数的list()方法</span>
+    <span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> fileList <span class="token operator">=</span> f<span class="token punctuation">.</span><span class="token function">list</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// 遍历返回的字符数组</span>
+    <span class="token keyword">assert</span> fileList <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token class-name">String</span> s <span class="token operator">:</span> fileList<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span>s <span class="token operator">+</span> <span class="token string">"\t\t"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">File</span><span class="token punctuation">(</span><span class="token string">"C:/"</span><span class="token punctuation">,</span> s<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">isFile</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">?</span> <span class="token string">"文件"</span> <span class="token operator">+</span> <span class="token string">"\t\t"</span> <span class="token operator">:</span> <span class="token string">"文件夹"</span> <span class="token operator">+</span> <span class="token string">"\t\t"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">File</span><span class="token punctuation">(</span><span class="token string">"C:/"</span><span class="token punctuation">,</span> s<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"字节"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="6-：动态读取文件内容"><a href="#6-：动态读取文件内容" class="headerlink" title="6)：动态读取文件内容"></a>6)：动态读取文件内容</h3><ul>
+<li><p>定义：动态读取是指从文件的任意位置开始访问文件，而不是从文件开始位置读取到文件末尾。动态读取则需要RandomccessFile类。</p>
+</li>
+<li><p>RandomAccessFile是Java输入/输出流体系中功能最丰富的文件内容访问类，众多方法可以访问文件内容，它既可以读取文件内容，也可以向文件输出数据</p>
+</li>
+<li><p>RandomAccessFile对象包含一个记录指针，用以表示当前读写处的位置，当程序新创建一个 RandomAccessFile 对象时，该对象的文件记录指针位于文件头（也就是 0 处），当读/写了 n 个字节后，文件记录指针将会向后移动 n 个字节。除此之外，RandonAccessFile 可以自由移动该记录指针，既可以向前移动，也可以向后移动</p>
+<center>RandomAccessFile类的常用方法</center>
+
+<table>
+<thead>
+<tr>
+<th>方法名及返回值类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>boolean readBoolean()</td>
+<td>从文件中读取一个 boolean 值</td>
+</tr>
+<tr>
+<td>byte readByte()</td>
+<td>从文件中读取一个带符号位的字节</td>
+</tr>
+<tr>
+<td>char readChar()</td>
+<td>从文件中读取一个字符</td>
+</tr>
+<tr>
+<td>int readlnt()</td>
+<td>从文件中读取一个带符号位的整数</td>
+</tr>
+<tr>
+<td>long readLong()</td>
+<td>从文件中读取一个带符号位的 long 值</td>
+</tr>
+<tr>
+<td>String readLine()</td>
+<td>从文件中读取下一行文本</td>
+</tr>
+<tr>
+<td>void seek(long pos)</td>
+<td>指定从文件起始位置开始的指针偏移量</td>
+</tr>
+<tr>
+<td>void writeBoolean(boolean v)</td>
+<td>以字节的形式向文件中写入一个 boolean 值</td>
+</tr>
+<tr>
+<td>void writeByte(int v)</td>
+<td>以单字节的形式向文件中写入一个 byte 值</td>
+</tr>
+<tr>
+<td>void writeChar(int v)</td>
+<td>以双字节的形式向文件中写入一个 char 值</td>
+</tr>
+<tr>
+<td>void writelnt(int v)</td>
+<td>以4字节的形式向文件中写入一个整数</td>
+</tr>
+<tr>
+<td>writeLong(long v)</td>
+<td>以8字节的形式向文件中写入一个 long 值</td>
+</tr>
+<tr>
+<td>void writeBytes(String s)</td>
+<td>以字节序列的形式向文件中写入一个字符串</td>
+</tr>
+<tr>
+<td>void skipBytes(int n)</td>
+<td>以当前文件指针位置为起始点，跳过 n 字节</td>
+</tr>
+</tbody></table>
+<p>RandomAccessFile 类的构造方法有如下两种重载形式。</p>
+<ol>
+<li>RandomAccessFile(File file, String mode)：访问参数 file 指定的文件，访问形式由参数 mode 指定，mode 参数有两个常用的可选值 r 和 rw，其中 r 表示只读，rw 表示读写。</li>
+<li>RandomAccessFile(String name, String mode)：访问参数 name 指定的文件，mode 参数的含义同上</li>
+</ol>
+<blockquote>
+<p>如果使用 rw 方式声明 RandomAccessFile 对象时，要写入的文件不存在，系统将自动进行创建</p>
+</blockquote>
+</li>
+<li><p>例 (创建words.txt文件，写入数据，并输出)</p>
+<ol>
+<li><p>创建RandomAccessFileDemo对象，创建words.txt文件</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">  <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">try</span> <span class="token punctuation">&#123;</span>
+      <span class="token class-name">File</span> file <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">File</span><span class="token punctuation">(</span><span class="token string">"D:\\resources\\Java\\LearnJava\\src\\words.txt"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>file<span class="token punctuation">.</span><span class="token function">exists</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        file<span class="token punctuation">.</span><span class="token function">delete</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        file<span class="token punctuation">.</span><span class="token function">createNewFile</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">&#125;</span>
+      file<span class="token punctuation">.</span><span class="token function">createNewFile</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">IOException</span> e<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ol>
+</li>
+</ul>
 
                 
             </div>
@@ -17330,7 +17818,7 @@ objectClass<span class="token punctuation">.</span><span class="token function">
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">140.1k</span>
+                class="white-color">140.8k</span>
             
             
             
